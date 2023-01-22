@@ -1,8 +1,11 @@
+// 추가문제 - 문제11 로봇 이동거리
+// 구현 - 2차원배열
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-//2차원배열 - 구현
+
 public class RobotMoving {
 
     static int T;

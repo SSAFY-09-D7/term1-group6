@@ -1,3 +1,6 @@
+//추가문제 - 문제13빌딩
+// 구현 - 2차원배열
+
 import java.io.BufferedReader;
 //import java.io.FileInputStream;
 import java.io.InputStreamReader;
