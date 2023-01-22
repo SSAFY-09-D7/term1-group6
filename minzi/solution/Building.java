@@ -1,4 +1,4 @@
-//추가문제 - 문제13빌딩
+// 추가문제 - 문제13 빌딩
 // 구현 - 2차원배열
 
 import java.io.BufferedReader;
