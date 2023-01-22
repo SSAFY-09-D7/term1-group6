@@ -36,14 +36,13 @@ public class swea2805 {
 				for (int col = mid-row; col < mid+row+1 ; col++) {
 					ret += map[row][col];
 					ret += map[N-1-row][col];
-					//System.out.println(ret);
 				}
 			}
 			
+			// Sum of mid row.
 			for (int col = 0; col < N; col++) {
 				ret += map[mid][col];
 			}
-			
 			System.out.println("#"+rnd+" "+ ret);
 		}
 	}
