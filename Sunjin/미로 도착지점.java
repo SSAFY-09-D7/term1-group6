@@ -45,30 +45,30 @@ public class test {
                 int dir = move[i][0];
                 int distance = move[i][1];
 
-                if(dir == 1){
-                    startRow -= distance;
-                }
-                else if(dir == 2){
-                    startCol += distance;
-                }
-                else if(dir == 3){
-                    startRow += distance;
-                }
-                else if(dir == 4){
-                    startCol -= distance;
-                }
+                for(int j = 0; j < distance; j++){
+                    if(dir == 1){
+                        startRow -= 1;
+                    }
+                    else if(dir == 2){
+                        startCol += 1;
+                    }
+                    else if(dir == 3){
+                        startRow += 1;
+                    }
+                    else if(dir == 4){
+                        startCol -= 1;
+                    }
+                    if(startRow <= 0 || startCol <=0 || startRow > N || startCol > N){
+                        jump = true;
+                        break;
+                    }
 
-                if(startRow <= 0 || startCol <=0 || startRow > N || startCol > N){
-                    jump = true;
-                    break;
-                }
-
-                if(map[startRow][startCol] == 1){
-                    jump = true;
-                    break;
+                    if(map[startRow][startCol] == 1){
+                        jump = true;
+                        break;
+                    }
                 }
             }
-
             int resultRow = 0;
             int resultCol = 0;
 
