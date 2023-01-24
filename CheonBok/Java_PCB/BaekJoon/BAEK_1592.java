@@ -26,9 +26,7 @@ public class BAEK_1592 {
 			else if (player[idx] % 2 != 0) {
 				idx = (idx+L)%N;
 			}
-			
 			player[idx]++;
-			maxcnt  = Math.max(maxcnt, player[idx]);
 		}
 		System.out.println(cnt);
 	}
