@@ -45,6 +45,7 @@ public class Problem5 {
                     ans[i] = 'H';
                     break;
                 default:
+                    //여기서 함수호출해서 되면 문자열 반환 / 아니면 밑에 리턴 ? 
                     return String.valueOf(i + 1);
 
             }
