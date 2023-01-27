@@ -35,7 +35,7 @@ public class BAEK_2578 {
 			k++;
 		}
 		
-		// insert bingo map diagonal cases 1
+		// insert bingo map of diagonal cases 1
 		idx += 5;
 		k = 0;
 		for (int j = 0; j <5; j++) {
@@ -43,7 +43,7 @@ public class BAEK_2578 {
 			k++;
 		}
 		
-		// insert bingo map diagonal cases 2
+		// insert bingo map of diagonal cases 2
 		idx++;
 		k=0;
 		for (int i = 0; i < 5; i++) {
@@ -51,8 +51,7 @@ public class BAEK_2578 {
 			k++;
 		}
 		
-		//System.out.println("빙고 게임 시작!!");
-		
+		// 빙고 게임 시작!!
 		// bingo start loop (call 5 rows)
 		for (int i = 0; i < 5; i++) {
 			token = br.readLine().split(" ");
