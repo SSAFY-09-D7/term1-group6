@@ -1,28 +1,36 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class BOJ1244 {
 
+    //스위치값 바꿔주는 함수
     static int switchNum(int n) {
         int num = (n == 1) ? 0 : 1 ;
         return num;
     }
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();  //스위치 개수
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st;
+        int n = Integer.parseInt(br.readLine());  //스위치 개수
         int[] swi = new int[n];
+        st = new StringTokenizer(br.readLine());
         for (int i = 0; i < n; i++) {
-            swi[i] = sc.nextInt();
+            swi[i] = Integer.parseInt(st.nextToken());
         }
-        int student = sc.nextInt();
+        int student = Integer.parseInt(br.readLine());
         for (int i = 0; i < student; i++) {
-            int gender = sc.nextInt();
-            int selected = sc.nextInt();
+            st = new StringTokenizer(br.readLine());
+            int gender = Integer.parseInt(st.nextToken());
+            int selected = Integer.parseInt(st.nextToken());
+
             int num; //내가 고른 스위치 번호의 배열 인덱스
 
             switch (gender) {
                 case 1:
                     num = selected-1;
-                    for (int j = num; j < swi.length; j+=selected) {
+                    for (int j = num; j < n; j+=selected) {
                         swi[j]=1;
                     }
                     break;
