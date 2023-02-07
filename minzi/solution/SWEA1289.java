@@ -2,7 +2,7 @@
 SWEA1289. 원재의 메모리 복구하기 - 재귀
 막힌 부분
 1. init[] 초기화는 char형이므로 null임. 0으로 착각함.
-2. 재귀함수에서 리턴 전까지는 count맞다가 return count 할때 main에 0을 달고 나옴. 호출했던 곳들의 변수의 값과 독립적이기때문에 당연함. =>static으로 처리해줌.
+2. 재귀함수에서 리턴 전까지는 count맞다가 return count 할때 main에 0을 달고 나옴. 호출했던 곳들의 변수의 값과 독립적이기때문에 당연함. =>static으로 처리해주었다
  */
 
 import java.io.BufferedReader;
