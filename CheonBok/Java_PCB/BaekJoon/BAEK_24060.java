@@ -1,10 +1,9 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class BAEK_24060 {
+public class BAEK_24060 { 
 
 	static int cnt = 0;
 	static int K;
@@ -12,74 +11,80 @@ public class BAEK_24060 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		int N = Integer.parseInt(st.nextToken());
-		K = Integer.parseInt(st.nextToken());  
-		int[] Narr = new int[N];
+		int N = Integer.parseInt(st.nextToken()); // the count of elements
+		K = Integer.parseInt(st.nextToken());     // the value of needs
+		int[] Narr = new int[N]; // Arrays of elements
 		
+		// append elements
 		st = new StringTokenizer(br.readLine());
 		for (int i = 0; i < N; i++) {
 			Narr[i] = Integer.parseInt(st.nextToken());
 		}
 		
+		// elements array, sorted array, start idx, end idx
+		Merge(Narr, new int[N], 0, N-1);
 		
-		System.out.println("현재 인덱스들 = "+0+" "+(N/2)+" "+(N-1));
-		Merge(Narr, new int[N], 0, N/2, N-1);
-		
+		// out of count
 		System.out.println("-1");
 	}
 
-	private static void Merge(int[] narr, int[] sort, int start, int mid, int end) {
-		if (start < end && cnt <= K) {
-			System.out.println("현재 인덱스들 = "+start+" "+mid+" "+end);
-			int m = (start+end)/2;
-			Merge(narr, sort, start, m, mid);
-			Merge(narr, sort, m+1, m+1, end);
+	
+	
+	private static void Merge(int[] narr, int[] sort, int start, int end) {
+		int mid = (start+end)/2; // middle index
+		
+		// if start >= end, all elements is sorted
+		if (start < end) {
+			Merge(narr, sort, start, mid); // Left Side
+			Merge(narr, sort, mid+1, end); // Right Side
 			
-			mergeSort(narr, sort, start, m, end);
+			// Merge Sort Method
+			mergeSort(narr, sort, start, mid, end);
 		}
 	}
 
+	// 
 	private static void mergeSort(int[] narr, int[] sort, int start, int mid, int end) {
-		
-		int i = start;
-		int j = mid+1;
+		int s = start;
+		int m = mid+1;
 		int t = 0;
 	
-		while ( i <= mid && j <= end) {
-			if (narr[i] <= narr[j]) {
-				sort[t++] = narr[i++];
+		// Compare Left side elements and Right side elements
+		// if left > right = right element is added and index ++
+		// else -> left element is added and index ++
+		while ( s <= mid && m <= end) {
+			if (narr[s] <= narr[m]) {
+				sort[t++] = narr[s++];
 			}
 			else {
-				sort[t++] = narr[j++];
+				sort[t++] = narr[m++];
 			}
 		}
 		
-		while ( i <= mid) {
-			sort[t++] = narr[i++];
+		// if left elements is remained
+		while ( s <= mid) {
+			sort[t++] = narr[s++];
 		}
 		
-		while ( j <= end) {
-			sort[t++] = narr[j++];
+		
+		// if right elements is remained
+		while ( m <= end) {
+			sort[t++] = narr[m++];
 			
 		}
 		
-		i = start;
+		// Update the located element of index (start to end)
+		s = start;
 		t = 0;
-		while(i <= end) {
-			narr[i++] = sort[t++];
+		while(s <= end) {
+			narr[s++] = sort[t++];
 			
+			// elements searching = add count
 			cnt += 1;
 			if (cnt == K) {
-				System.out.println("K = "+K);
-				System.out.println("h4 "+narr[i]);
+				System.out.println(narr[s-1]);
 				System.exit(0);
 			}
 		}
-		
-		//System.out.println("현재 cnt = "+cnt);
-		System.out.println(Arrays.toString(sort));
-		System.out.println(Arrays.toString(narr));
-		
 	}
-
 }
