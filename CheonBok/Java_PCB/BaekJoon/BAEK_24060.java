@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BAEK_24060 {
+public class BAEK_24060 { 
 
 	static int cnt = 0;
 	static int K;
