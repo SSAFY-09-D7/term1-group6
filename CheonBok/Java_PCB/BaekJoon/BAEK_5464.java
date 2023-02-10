@@ -42,7 +42,7 @@ public class BAEK_5464 {
 				}
 				
 				// check available parking station
-				// row index = high priority
+				// low index = high priority
 				for (int j = 0; j < N; j++) {
 					if (parking[j] == false) {
 						used[j] = flg;
