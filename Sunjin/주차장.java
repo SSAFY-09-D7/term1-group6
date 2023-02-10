@@ -57,7 +57,7 @@ public class Main2 {
         	if(value < 0) {
         		for(int key : visited.keySet()) {
         			if(visited.get(key) == Integer.valueOf(-value)) {
-        				sum += fee.get(Integer.valueOf(visited.get(key))) * weight.get(Integer.valueOf(-value));
+        				sum += fee.get(Integer.valueOf(key)) * weight.get(Integer.valueOf(-value));
         				if(waitQ.size() == 0) {
         					visited.put(key, null);
         					break;
