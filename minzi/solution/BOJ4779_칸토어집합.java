@@ -56,5 +56,4 @@ public class BOJ4779 {
 		//현재 기준 오른쪽
 		recursive(start + length/3*2, length/3);
 	}
-
 }
