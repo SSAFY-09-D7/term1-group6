@@ -4,11 +4,10 @@
  * 막힌 부분: 문자열을 가지고 처리를 하다보니 StringBuilder객체가 계속 생성되어 메모리 초과뜸.
  * 문자열 나오면 배열에 넣어 처리하는 걸 먼저 생각하자 . .
  */
-package solution;
 
 import java.io.*;
 
-public class BOJ4779 {
+public class BOJ4779_칸토어집합 {
 	static char[] chars;
 
 	public static void main(String[] args) throws IOException {
