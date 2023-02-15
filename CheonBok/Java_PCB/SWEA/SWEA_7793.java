@@ -73,7 +73,6 @@ public class SWEA_7793 {
 			
 			// 먼저 악마가 퍼진다.
 			int size = devil.size();
-			System.out.println();
 			
 			for (int i = 0; i < size; i++) {
 				point tmp = devil.poll();
