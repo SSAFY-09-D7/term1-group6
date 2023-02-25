@@ -1,5 +1,3 @@
-package algorithm;
-
 import java.io.*;
 import java.util.*;
 
