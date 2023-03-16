@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-public class BOJ5972 {
+public class BOJ5972_택배배송 {
     static class Node {
         int e,c;
 
